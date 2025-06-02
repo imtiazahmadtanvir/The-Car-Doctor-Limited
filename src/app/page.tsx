@@ -1,10 +1,11 @@
-import Image from "next/image";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
+import ServiceSection from "@/components/service/ServiceSection";
 
 export default function Home() {
   return (
     <div className="">
-        <Navbar/>
+      <Navbar/>
+      <ServiceSection/>
     </div>
   );
 }
