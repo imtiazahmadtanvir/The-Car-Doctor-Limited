@@ -14,7 +14,7 @@ export default function Navbar() {
           <Link href={"/"}>About</Link>
         </li>
         <li>
-          <Link href={"/"}>Services</Link>
+          <Link href={"/services"}>Services</Link>
         </li>{" "}
         <li>
           <Link href={"/"}>Blogs</Link>
