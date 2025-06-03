@@ -1,11 +1,11 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect, { collectionNameobj } from "@/lib/dbConnect";
 import Image from 'next/image';
 import React from 'react';
 
 export default async function ServiceSection() {
     
    // const res = await fetch("/services.json")
-        const serviceCollection = await dbConnect("test_service");
+        const serviceCollection = await dbConnect(collectionNameobj.servicesCollection);
         const data = await serviceCollection.find({}).toArray();
 
     return (
