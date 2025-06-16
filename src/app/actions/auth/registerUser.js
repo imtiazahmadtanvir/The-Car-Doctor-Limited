@@ -19,7 +19,7 @@ export const registerUser = async (payload)=>{
     return result;
    }
    
- 
+
 
    return null;
 }

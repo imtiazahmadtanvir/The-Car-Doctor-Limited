@@ -2,13 +2,11 @@ import Image from "next/image";
 
 import React from "react";
 import RegisterForm from "./components/RegisterForm";
-import Navbar from "@/components/Navbar/Navbar";
 
 
 export default function RegisterPage() {
   return (
     <>
-   <Navbar/>
       <h1 className="text-3xl font-bold text-center my-8">Register</h1>
       <section className="container mx-auto grid grid-cols-12">
         {/* Left Section */}

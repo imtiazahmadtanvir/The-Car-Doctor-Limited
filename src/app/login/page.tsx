@@ -1,21 +1,21 @@
-import Image from "next/image";
+import Image from "next/image"
+import type { JSX } from "react"
+import LoginForm from "./components/LoginForm"
 
-import LoginForm from "./components/LoginForm";
-
-
-export default function LoginPage() {
+export default function LoginPage(): JSX.Element {
   return (
     <>
+
       <h1 className="text-3xl font-bold text-center my-8">Login</h1>
       <section className="container mx-auto grid grid-cols-12">
         {/* Left Section */}
         <div className="col-span-12 md:col-span-6 flex justify-center items-center">
           <Image
             className="hidden md:block"
-            src={"/assets/images/login/login.svg"}
+            src="/assets/images/login/login.svg"
             width={460}
             height={500}
-            alt={"Authentication Image"}
+            alt="Authentication Image"
           />
         </div>
 
@@ -25,5 +25,5 @@ export default function LoginPage() {
         </div>
       </section>
     </>
-  );
+  )
 }

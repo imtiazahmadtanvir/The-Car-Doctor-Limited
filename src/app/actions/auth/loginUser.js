@@ -1,19 +1,18 @@
 "use server"
 
-import dbConnect, { collectionNameobj } from '@/lib/dbConnect';
-import bcrypt from "bcrypt";
+import dbConnect, { collectionNameobj } from '@/lib/dbConnect'
+import bcrypt from "bcrypt"
 
+export const loginUSer = async (payload) => {
+  const { email, password } = payload
 
-export const loginUSer = async (payload) =>{
+  const userCollection = dbConnect(collectionNameobj.userCollection)
+  const user = await userCollection.findOne({ email })
 
-    const {email,password } = payload;
+  if (!user) return null
 
-    const userCollection =dbConnect(collectionNameobj.userCollection);
-    const user =await userCollection.findOne({email})
+  const isPasswordOk = await bcrypt.compare(password, user.password)
+  if (!isPasswordOk) return null
 
-    if(!user) return null
-    const isPasswordOk = bcrypt.compare(user.password, password)
-    if(!isPasswordOk) return null
-
-    return user;
+  return user
 }
