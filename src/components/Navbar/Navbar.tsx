@@ -78,7 +78,7 @@ export default function Navbar() {
                   <Link href={"/register"}>Register</Link>
                 </li>
                 <li>
-                  <Link href={"/"}>Login</Link>
+                  <Link href={"/login"}>Login</Link>
                 </li>
               </>
             )}
