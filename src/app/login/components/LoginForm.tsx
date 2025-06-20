@@ -4,6 +4,7 @@ import Link from "next/link"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import toast from "react-hot-toast"
+import SocialLogin from "./SocialLogin"
 
 export default function LoginForm(): React.JSX.Element {
   const router = useRouter()
@@ -23,15 +24,18 @@ export default function LoginForm(): React.JSX.Element {
         redirect: false,
       })
 
-      if (result?.ok) {
-        // Successful sign-in, redirect to home page
-        toast.success("Login Successfully")
-        router.push("/")
-      } else {
-        // Sign-in failed
-        toast.error("Failed in Login")
-        console.log("Invalid credentials. Please try again.")
-      }
+    if (result?.ok) {
+      // Wait for 10 seconds before showing success toast
+      await new Promise(resolve => setTimeout(resolve, 10000));
+      toast.success("Login Successfully");
+      router.push("/");
+    } else {
+      // Wait for 10 seconds before showing error toast
+      await new Promise(resolve => setTimeout(resolve, 10000));
+      toast.error("Failed in Login");
+      console.log("Invalid credentials. Please try again.");
+    }
+
     } catch (error) {
       console.log(error)
       alert("Authentication Failed")
@@ -71,9 +75,9 @@ export default function LoginForm(): React.JSX.Element {
         Sign In
       </button>
       <p className="text-center">Or Sign In with</p>
-      {/* <SocialLogin /> */}
+      <SocialLogin/>
       <p className="text-center">
-        Don't have an account?{" "}
+        Do not have an account?{" "}
         <Link href="/register" className="text-orange-500 font-bold hover:underline">
           Register
         </Link>

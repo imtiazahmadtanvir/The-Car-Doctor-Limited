@@ -1,23 +1,15 @@
-import Navbar from "@/components/Navbar/Navbar"
 import dbConnect, { collectionNameobj } from "@/lib/dbConnect"
 import Image from "next/image"
 import Link from "next/link"
 import { FaArrowRight, FaStar } from "react-icons/fa"
+
 
 interface ServiceFacility {
   name: string
   details: string
 }
 
-interface Service {
-  _id: string
-  service_id: string
-  title: string
-  img: string
-  price: string
-  description: string
-  facility: ServiceFacility[]
-}
+
 
 export default async function ServicesPage() {
   const serviceCollection = await dbConnect(collectionNameobj.servicesCollection)
@@ -134,7 +126,7 @@ export default async function ServicesPage() {
           <div className="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Service?</h2>
             <p className="text-gray-600 mb-6">
-              Can't find what you're looking for? Contact us for a personalized service solution tailored to your
+              Can not find what you are looking for? Contact us for a personalized service solution tailored to your
               specific requirements.
             </p>
             <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
