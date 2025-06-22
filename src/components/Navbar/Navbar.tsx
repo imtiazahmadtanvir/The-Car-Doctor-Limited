@@ -28,7 +28,7 @@ const navItems: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Blogs", href: "/blogs" },
-  { label: "My Bookings", href: "/bookings" },
+  // { label: "My Bookings", href: "/bookings" },
 ]
 
 export default function Navbar() {
@@ -126,7 +126,7 @@ export default function Navbar() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href="/bookings" className="cursor-pointer">
+              <Link href="/bookings" className="hidden cursor-pointer">
                 <Calendar className="mr-2 h-4 w-4" />
                 My Bookings
               </Link>
@@ -188,7 +188,7 @@ export default function Navbar() {
           <div className="hidden md:flex md:items-center md:space-x-4">
             <AuthSection />
             <Button variant="outline" asChild>
-              <Link href="/appointment">
+              <Link href="/bookings">
                 <Calendar className="mr-2 h-4 w-4" />
                 Appointment
               </Link>
@@ -209,7 +209,7 @@ export default function Navbar() {
                   <NavLinks mobile onItemClick={() => setIsOpen(false)} />
                   <div className="pt-4">
                     <Button variant="outline" className="w-full mb-3" asChild>
-                      <Link href="/appointment" onClick={() => setIsOpen(false)}>
+                      <Link href="/bookings" onClick={() => setIsOpen(false)}>
                         <Calendar className="mr-2 h-4 w-4" />
                         Appointment
                       </Link>

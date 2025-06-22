@@ -25,7 +25,7 @@ export default function HeroBanner() {
   }, [])
 
   return (
-    <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+    <section className="relative lg-mt-10 w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
       {/* Background Image Slider */}
       <div className="absolute inset-0">
         {bannerImages.map((image, index) => (
