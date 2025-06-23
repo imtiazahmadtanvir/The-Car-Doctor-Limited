@@ -29,25 +29,6 @@ export default async function ServiceDetailsPage({ params }: ServiceDetailsPageP
 
   return (
     <div className="container mx-auto">
-      <section className="flex justify-center mb-8">
-        <figure className="relative w-full max-w-6xl">
-          <Image
-            src="/assets/images/checkout/checkout.png"
-            width={1137}
-            height={300}
-            alt="banner"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center">
-            <div className="w-full h-full font-bold text-2xl flex items-center ps-16">
-              <div>
-                <h1 className="text-white">{data.title}</h1>
-              </div>
-            </div>
-          </div>
-        </figure>
-      </section>
-
       <section className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4 px-4">
         {/* Left Side */}
         <div className="lg:col-span-9 space-y-6">

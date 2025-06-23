@@ -1,25 +1,40 @@
 "use server";
 
 import bcrypt from "bcrypt";
-import dbConnect, { collectionNameobj } from '@/lib/dbConnect';
+import dbConnect, { collectionNameobj } from "@/lib/dbConnect";
 
-export const registerUser = async (payload)=>{
-   const userCollection =dbConnect(collectionNameobj.userCollection)
-   
-   // Validation if user have exist id
-   const {email,password} =payload;
-   if (!email || !password) return null;
-   const user = await userCollection.findOne({ email: payload.email })
-   
-   if(!user){
-    const hashedPassword = await bcrypt.hash(password, 10)
-    payload.password = hashedPassword
-    const result =await userCollection.insertOne(payload);
-    result.insertedId = result.insertedId.toString()
-    return result;
-   }
-   
+export const registerUser = async (payload) => {
+  try {
+    const { name, email, password } = payload;
 
+    if (!email || !password) {
+      return { success: false, message: "Email and password are required" };
+    }
 
-   return null;
-}
+    const userCollection = dbConnect(collectionNameobj.userCollection);
+    const existingUser = await userCollection.findOne({ email });
+
+    if (existingUser) {
+      return { success: false, message: "User already exists with this email" };
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const result = await userCollection.insertOne({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    return {
+      success: true,
+      message: "User registered successfully!",
+      insertedId: result.insertedId.toString(),
+    };
+  } catch (error) {
+    console.error("Registration error:", error);
+    return {
+      success: false,
+      message: "Registration failed. Please try again.",
+    };
+  }
+};

@@ -19,7 +19,7 @@ export default async function ServiceSection() {
             reliability you can trust.
           </p>
         </div>
-    <div className="grid grid-cols-12 gap-4 container mx-auto">
+    <div className="grid grid-cols-12 gap-4 container mx-auto pb-5">
       {data.map((item) => {
         return (
           <div
@@ -56,6 +56,7 @@ export default async function ServiceSection() {
         );
       })}
     </div>
+   
   </div>
   );
 }

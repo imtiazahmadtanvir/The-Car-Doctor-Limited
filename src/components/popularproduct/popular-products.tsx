@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const products = [
   {
@@ -114,7 +115,7 @@ export default function PopularProducts() {
             size="lg"
             className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-3 text-base font-semibold bg-transparent"
           >
-            More Products
+            <Link href="/services">More Products</Link>
           </Button>
         </div>
       </div>
