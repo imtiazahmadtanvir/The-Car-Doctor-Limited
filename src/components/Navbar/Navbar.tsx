@@ -170,10 +170,13 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative h-8 w-24 sm:h-10 sm:w-28">
-                <Image src="/assets/logo.svg" fill alt="Brand Logo" className="object-contain" priority />
+            <Link href="/" className="flex items-center space-x-0">
+              <div className="relative h-10 w-24 sm:h-10 sm:w-28 overflow-hidden">
+                  
+                  <Image src="/assets/logo.svg" fill alt="Brand Logo" className="object-contain" priority />
+
               </div>
+              
             </Link>
           </div>
 

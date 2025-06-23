@@ -10,6 +10,13 @@ import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const bannerData = [
+    {
+    image: "/assets/images/banner/6.jpg",
+    title: "Customer First",
+    subtitle: "Your Satisfaction Guaranteed",
+    description: "We prioritize your needs with personalized service and transparent communication throughout.",
+    accent: "bg-gradient-to-r from-indigo-600 to-blue-600",
+  },
   {
     image: "/assets/images/banner/1.jpg",
     title: "Premium Auto Care",
@@ -46,13 +53,7 @@ const bannerData = [
     description: "Get back on the road quickly with our streamlined service process and efficient workflow.",
     accent: "bg-gradient-to-r from-yellow-600 to-red-600",
   },
-  {
-    image: "/assets/images/banner/6.jpg",
-    title: "Customer First",
-    subtitle: "Your Satisfaction Guaranteed",
-    description: "We prioritize your needs with personalized service and transparent communication throughout.",
-    accent: "bg-gradient-to-r from-indigo-600 to-blue-600",
-  },
+
 ]
 
 export default function HeroBanner() {
@@ -199,7 +200,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 z-30">
+      <div className="absolute lg:block hidden left-6 top-1/2 -translate-y-1/2 z-30">
         <motion.button
           onClick={prevSlide}
           className="group relative p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
@@ -211,7 +212,7 @@ export default function HeroBanner() {
         </motion.button>
       </div>
 
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 z-30">
+      <div className="absolute lg:block hidden right-6 top-1/2 -translate-y-1/2 z-30">
         <motion.button
           onClick={nextSlide}
           className="group relative p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
@@ -318,7 +319,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Advanced Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+      <div className="absolute bottom-20 lg:block hidden left-1/2 transform -translate-x-1/2 z-30">
         <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20">
           {bannerData.map((_, index) => (
             <motion.button
@@ -367,7 +368,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-8 right-8 z-30">
+      <div className="absolute hidden top-8 right-8 z-30">
         <div className="bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
           <span className="text-white font-medium">
             {String(currentIndex + 1).padStart(2, "0")} / {String(bannerData.length).padStart(2, "0")}
