@@ -28,10 +28,10 @@ function Modal({ isOpen, onClose, children, screenSize }: ModalProps) {
         className={cn(
           "bg-white p-0 relative rounded-lg shadow-xl overflow-hidden",
           screenSize === "small"
-            ? "w-[95vw] h-[90vh] max-w-none"
+            ? "w-[100vw] h-[100vh] max-w-none rounded-none"
             : screenSize === "medium"
-              ? "w-[85vw] h-[85vh] max-w-[800px] rounded-xl"
-              : "w-[75vw] h-[85vh] max-w-[1200px] rounded-xl",
+              ? "w-[95vw] h-[90vh] max-w-[500px] rounded-xl"
+              : "w-[85vw] h-[85vh] max-w-[800px] rounded-xl",
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -39,9 +39,9 @@ function Modal({ isOpen, onClose, children, screenSize }: ModalProps) {
         <button
           onClick={onClose}
           className={cn(
-            "absolute z-[100001] rounded-full backdrop-blur-sm",
+            "absolute z-[100001] rounded-full backdrop-blur-sm transition-colors",
             screenSize === "small"
-              ? "right-2 top-2 p-1.5 bg-white/70 hover:bg-white"
+              ? "right-2 top-2 p-2 bg-white/80 hover:bg-white shadow-lg"
               : screenSize === "medium"
                 ? "right-3 top-3 p-2 bg-white/75 hover:bg-white shadow-md"
                 : "right-4 top-4 p-2.5 bg-white/80 hover:bg-white shadow-lg",
@@ -50,7 +50,7 @@ function Modal({ isOpen, onClose, children, screenSize }: ModalProps) {
         >
           <X
             className={cn(
-              screenSize === "small" ? "h-4 w-4" : screenSize === "medium" ? "h-4.5 w-4.5" : "h-5 w-5",
+              screenSize === "small" ? "h-5 w-5" : screenSize === "medium" ? "h-4 w-4" : "h-5 w-5",
               "text-orange-800",
             )}
           />
@@ -96,17 +96,17 @@ function FloatingChatbot() {
           "flex items-center justify-center",
           "bg-orange-600 text-white hover:bg-orange-700 transition-all duration-300",
           screenSize === "small"
-            ? "bottom-4 right-4 w-12 h-12 gap-1"
+            ? "bottom-4 right-4 w-14 h-14 gap-1"
             : screenSize === "medium"
-              ? "bottom-6 right-6 w-14 h-14 gap-1.5"
-              : "bottom-8 right-8 w-16 h-16 gap-2",
+              ? "bottom-6 right-6 w-16 h-16 gap-1.5"
+              : "bottom-8 right-8 w-18 h-18 gap-2",
           isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100",
         )}
         aria-label="Open Car Doctor Assistant"
       >
-        {screenSize !== "small" && <Car className={cn(screenSize === "medium" ? "h-4 w-4" : "h-5 w-5")} />}
+        <Car className={cn(screenSize === "small" ? "h-4 w-4" : screenSize === "medium" ? "h-5 w-5" : "h-6 w-6")} />
         <MessageCircle
-          className={cn(screenSize === "small" ? "h-5 w-5" : screenSize === "medium" ? "h-5.5 w-5.5" : "h-6 w-6")}
+          className={cn(screenSize === "small" ? "h-5 w-5" : screenSize === "medium" ? "h-6 w-6" : "h-7 w-7")}
         />
       </Button>
 
