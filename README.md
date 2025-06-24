@@ -155,3 +155,61 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
   createdAt: Date,
   updatedAt: Date
 }
+```
+## Services Collection
+
+```js
+{
+  _id: ObjectId,
+  title: String,
+  description: String,
+  price: Number,
+  img: String,
+  category: String,
+  createdAt: Date
+}
+
+```
+##Bookings Collection
+```js
+{
+  _id: ObjectId,
+  serviceId: ObjectId,
+  serviceName: String,
+  servicePrice: Number,
+  customerName: String,
+  customerEmail: String,
+  customerPhone: String,
+  bookingDate: Date,
+  bookingTime: String,
+  status: String (pending, confirmed, completed, cancelled),
+  specialRequests: String,
+  createdAt: Date
+}
+
+```
+
+#  API Endpoints
+
+```js
+Authentication
+POST /api/auth/signin - User login
+
+POST /api/auth/signup - User registration
+
+GET /api/auth/session - Get current session
+
+Services
+GET /api/services - Get all services
+
+GET /api/services/[id] - Get service by ID
+
+Bookings
+GET /api/bookings - Get user bookings
+
+POST /api/bookings - Create new booking
+
+PUT /api/bookings/[id] - Update booking
+
+DELETE /api/bookings/[id] - Delete booking
+```
