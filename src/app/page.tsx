@@ -1,5 +1,6 @@
 import AboutUsSection from "@/components/aboutsection/about-us-section";
 import HeroBanner from "@/components/banner/hero-banner";
+import FloatingChatbot from "@/components/chatbot/floating-chatbot";
 import ContactHeader from "@/components/contactHeader/contact-header";
 import WhyChooseUs from "@/components/CoreFeatures/why-choose-us";
 import PopularProducts from "@/components/popularproduct/popular-products";
@@ -18,6 +19,7 @@ export default function Home() {
       <MeetOurTeam/>
       <WhyChooseUs/>
       <TestimonialsSection/>
+      <FloatingChatbot/>
     </div>
   );
 }
