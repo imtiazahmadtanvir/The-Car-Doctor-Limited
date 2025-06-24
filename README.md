@@ -77,19 +77,22 @@ Before running this project, make sure you have:
 
 ```bash
 git clone https://github.com/imtiazahmadtanvir/The-Car-Doctor-Limited.git
-
+```
+### 2.  Install Dependencies
+```bash
 pnpm install
 # or
 npm install
-
+```
+### 3.  Run the Development Server
+```bash
 npm run dev
 # or
 yarn dev
-
-
+```
+```bash
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
-
----
+```
 
 ## 🔐 Authentication Flow
 
