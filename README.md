@@ -1,4 +1,4 @@
-# The Next Car Doctor
+# The Next Car Doctor .
 
 A modern, full-stack web application built with Next.js 15, featuring comprehensive authentication, service booking, responsive chatbot, and user management capabilities.
 
